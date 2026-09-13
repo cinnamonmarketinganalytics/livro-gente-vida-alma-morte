@@ -177,4 +177,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { passive: true });
 
+  // ========================================================================
+  // 8. Botão Voltar ao Topo
+  // ========================================================================
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
 });
+

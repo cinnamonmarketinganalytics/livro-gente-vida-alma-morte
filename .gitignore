@@ -15,3 +15,6 @@ ehthumbs.db
 
 # Logs
 *.log
+
+# Cloudflare Wrangler
+.wrangler/
