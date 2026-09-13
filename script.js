@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (shareWhatsAppBtn) {
     const currentUrl = window.location.href.startsWith('http') 
       ? window.location.href 
-      : 'https://livromelqui.pages.dev'; // Fallback elegante
+      : 'https://livro-gente-vida-alma-morte.cinnamon-marketing-analytics.workers.dev';
     
     const message = `Conheça e baixe gratuitamente o livro de poemas *"GENTE: vida · alma · morte"*, de Andreza Costa, Kaylane Pereira e Melquisedeque Silva (Organização de Luisa Borges Canella).\n\nBaixe aqui: ${currentUrl}`;
     
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     copyLinkBtn.addEventListener('click', async () => {
       const urlToCopy = window.location.href.startsWith('http') 
         ? window.location.href 
-        : window.location.origin || 'https://livromelqui.pages.dev';
+        : 'https://livro-gente-vida-alma-morte.cinnamon-marketing-analytics.workers.dev';
 
       try {
         if (navigator.clipboard && window.isSecureContext) {
