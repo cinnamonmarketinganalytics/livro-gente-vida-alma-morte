@@ -1,0 +1,17 @@
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# Editores & IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+*.log
