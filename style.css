@@ -670,54 +670,6 @@ img {
 }
 
 /* ==========================================================================
-   Barra de Destaques Rápidos
-   ========================================================================== */
-.highlights-bar {
-  background-color: var(--bg-surface);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 30px 0;
-}
-
-.highlights-grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.highlight-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.highlight-number {
-  font-family: var(--font-serif-display);
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--color-indigo);
-  line-height: 1;
-}
-
-.highlight-label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 6px;
-}
-
-.highlight-separator {
-  width: 1px;
-  height: 44px;
-  background-color: var(--border-subtle);
-}
-
-/* ==========================================================================
    Seções Gerais
    ========================================================================== */
 .section {
@@ -846,11 +798,20 @@ img {
   text-align: center;
 }
 
-.art-caption-text {
-  font-size: 0.88rem;
-  color: var(--text-muted);
+.art-caption-title {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--color-slate-blue);
+}
+
+.art-caption-sub {
+  font-family: var(--font-serif-body);
+  font-size: 1.15rem;
   font-style: italic;
-  line-height: 1.4;
+  color: var(--text-secondary);
+  margin-top: 4px;
 }
 
 /* ==========================================================================
@@ -1167,30 +1128,34 @@ img {
 }
 
 /* ==========================================================================
-   Autores & Organizadora Section
+   Autores & Equipe Editorial Section
    ========================================================================== */
 .authors-section {
   background-color: #f7f3ec;
 }
 
-.authors-grid {
+/* 3 Autores Lado a Lado */
+.authors-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 28px;
 }
 
-.author-card {
+.author-card-vertical {
   background-color: var(--bg-surface);
   border-radius: var(--radius-lg);
-  padding: 36px;
+  padding: 32px 24px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-subtle);
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   transition: var(--transition-smooth);
 }
 
-.author-card:hover {
+.author-card-vertical:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: rgba(22, 56, 92, 0.2);
@@ -1204,10 +1169,10 @@ img {
   flex-shrink: 0;
 }
 
-/* Foto dos Autores em Formato Redondo */
+/* Foto Redonda */
 .author-avatar-img-wrapper {
-  width: 84px;
-  height: 84px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid #ffffff;
@@ -1217,7 +1182,8 @@ img {
   transition: transform 0.3s ease;
 }
 
-.author-card:hover .author-avatar-img-wrapper {
+.author-card-vertical:hover .author-avatar-img-wrapper,
+.team-card:hover .author-avatar-img-wrapper {
   transform: scale(1.05);
 }
 
@@ -1230,8 +1196,8 @@ img {
 }
 
 .author-avatar-icon {
-  width: 84px;
-  height: 84px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-wash-blue) 0%, var(--color-ice-blue) 100%);
   color: var(--color-indigo);
@@ -1240,11 +1206,12 @@ img {
   justify-content: center;
   border: 3px solid #ffffff;
   box-shadow: 0 4px 14px rgba(10, 28, 49, 0.15);
+  flex-shrink: 0;
 }
 
 .author-avatar-icon svg {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
 }
 
 .author-avatar-icon.special {
@@ -1257,7 +1224,7 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 3px 8px;
+  padding: 3px 10px;
   border-radius: 9999px;
   background-color: var(--color-wash-blue);
   color: var(--color-indigo);
@@ -1269,11 +1236,75 @@ img {
   color: #9c6c18;
 }
 
-.author-body {
+.author-card-vertical .author-body {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.author-card-vertical .author-name {
+  font-family: var(--font-serif-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-navy-dark);
+  margin-bottom: 2px;
+}
+
+.author-card-vertical .author-origin {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-slate-blue);
+  margin-bottom: 12px;
+}
+
+.author-card-vertical .author-bio {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+/* Equipe Editorial (Organizadora e Revisora) */
+.editorial-team-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team-card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 30px 36px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+
+.team-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(22, 56, 92, 0.2);
+}
+
+.team-card.organizer-card {
+  background: linear-gradient(135deg, #ffffff 0%, #faf6ee 100%);
+  border-color: rgba(194, 152, 88, 0.35);
+}
+
+.team-card.reviewer-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f4f8fb 100%);
+  border-color: rgba(79, 114, 155, 0.25);
+}
+
+.team-card .author-body {
   flex-grow: 1;
 }
 
-.author-name {
+.team-card .author-name {
   font-family: var(--font-serif-display);
   font-size: 1.45rem;
   font-weight: 700;
@@ -1281,28 +1312,17 @@ img {
   margin-bottom: 2px;
 }
 
-.author-origin {
+.team-card .author-origin {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-slate-blue);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.author-bio {
+.team-card .author-bio {
   font-size: 0.94rem;
   line-height: 1.65;
   color: var(--text-secondary);
-}
-
-.author-bio em {
-  font-style: italic;
-  color: var(--color-indigo);
-}
-
-.organizer-card {
-  grid-column: span 2;
-  background: linear-gradient(135deg, #ffffff 0%, #faf6ee 100%);
-  border-color: rgba(194, 152, 88, 0.3);
 }
 
 /* ==========================================================================
@@ -1457,70 +1477,6 @@ img {
 }
 
 /* ==========================================================================
-   Ficha Catalográfica Section
-   ========================================================================== */
-.technical-section {
-  background-color: var(--bg-body);
-}
-
-.technical-card {
-  max-width: 720px;
-  margin: 0 auto;
-  background-color: var(--bg-surface);
-  border: 2px solid var(--color-navy-dark);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-md);
-  padding: 32px 40px;
-  position: relative;
-}
-
-.catalog-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 12px;
-  margin-bottom: 24px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-muted);
-}
-
-.catalog-indent {
-  text-indent: 35px;
-  font-size: 0.95rem;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-
-.catalog-text {
-  text-indent: 35px;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--text-primary);
-  margin-bottom: 16px;
-}
-
-.catalog-meta {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-  padding-left: 35px;
-}
-
-.catalog-classification {
-  display: flex;
-  gap: 30px;
-  padding-top: 14px;
-  border-top: 1px dashed var(--border-subtle);
-  font-size: 0.88rem;
-  color: var(--text-muted);
-}
-
-/* ==========================================================================
    Footer
    ========================================================================== */
 .site-footer {
@@ -1670,12 +1626,16 @@ img {
     margin: 0 auto;
   }
 
-  .authors-grid {
+  .authors-row {
     grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto 28px;
   }
 
-  .organizer-card {
-    grid-column: span 1;
+  .team-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 24px;
   }
 
   .title-main {
@@ -1732,16 +1692,5 @@ img {
 
   .download-title {
     font-size: 2.2rem;
-  }
-
-  .author-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 26px 20px;
-  }
-
-  .technical-card {
-    padding: 24px 18px;
   }
 }

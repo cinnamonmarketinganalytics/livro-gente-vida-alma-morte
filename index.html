@@ -52,8 +52,7 @@
           <li><a href="#sobre">A Obra</a></li>
           <li><a href="#capitulos">Capítulos</a></li>
           <li><a href="#poemas">Poemas</a></li>
-          <li><a href="#autores">Autores</a></li>
-          <li><a href="#ficha">Ficha Técnica</a></li>
+          <li><a href="#autores">Autores & Equipe</a></li>
         </ul>
       </nav>
 
@@ -159,31 +158,6 @@
     </div>
   </section>
 
-  <!-- Quick Highlight Bar -->
-  <section class="highlights-bar">
-    <div class="container highlights-grid">
-      <div class="highlight-box">
-        <span class="highlight-number">94</span>
-        <span class="highlight-label">Páginas de Versos & Arte</span>
-      </div>
-      <div class="highlight-separator"></div>
-      <div class="highlight-box">
-        <span class="highlight-number">3</span>
-        <span class="highlight-label">Poetas Baianos</span>
-      </div>
-      <div class="highlight-separator"></div>
-      <div class="highlight-box">
-        <span class="highlight-number">3</span>
-        <span class="highlight-label">3 Capítulos: Vida, Alma e Morte</span>
-      </div>
-      <div class="highlight-separator"></div>
-      <div class="highlight-box">
-        <span class="highlight-number">0</span>
-        <span class="highlight-label">Custo • Acesso 100% Livre</span>
-      </div>
-    </div>
-  </section>
-
   <!-- Sobre a Obra Section -->
   <section class="section about-section" id="sobre">
     <div class="container">
@@ -216,7 +190,8 @@
           <div class="art-frame">
             <img src="arte.jpeg" alt="Ilustração da padronagem de rostos do livro" class="art-img" loading="lazy">
             <div class="art-caption">
-              <p class="art-caption-text">Ilustração original por Andreza Costa / Multiplicidade, expressão e sensibilidade.</p>
+              <span class="art-caption-title">Ilustração original por Andreza Costa</span>
+              <p class="art-caption-sub">Multiplicidade, expressão e sensibilidade.</p>
             </div>
           </div>
         </div>
@@ -488,13 +463,13 @@
     </div>
   </section>
 
-  <!-- Autores & Organizadora Section -->
+  <!-- Autores & Equipe Editorial Section -->
   <section class="section authors-section" id="autores">
     <div class="container">
       
       <div class="section-header text-center">
         <span class="section-tag">As Vozes por Trás dos Versos</span>
-        <h2 class="section-title">Autores & Organizadora</h2>
+        <h2 class="section-title">Autores & Equipe Editorial</h2>
         <div class="section-ornament">
           <span></span>
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.6-6.2 4.6 2.3-7.3-6.1-4.5h7.6z"/></svg>
@@ -502,10 +477,11 @@
         </div>
       </div>
 
-      <div class="authors-grid">
+      <!-- Linha dos 3 Autores Lado a Lado -->
+      <div class="authors-row">
         
         <!-- Author 1: Andreza Costa -->
-        <article class="author-card">
+        <article class="author-card-vertical">
           <div class="author-avatar-wrapper">
             <div class="author-avatar-img-wrapper">
               <img src="Andreza_imagem.jpeg" alt="Foto de Andreza dos Santos Costa" class="author-avatar-img">
@@ -522,7 +498,7 @@
         </article>
 
         <!-- Author 2: Kaylane Pereira -->
-        <article class="author-card">
+        <article class="author-card-vertical">
           <div class="author-avatar-wrapper">
             <div class="author-avatar-img-wrapper">
               <img src="kaylane_imagem.jpeg" alt="Foto de Kaylane Soares Pereira" class="author-avatar-img">
@@ -539,7 +515,7 @@
         </article>
 
         <!-- Author 3: Melquisedeque Silva -->
-        <article class="author-card">
+        <article class="author-card-vertical">
           <div class="author-avatar-wrapper">
             <div class="author-avatar-img-wrapper">
               <img src="Melquisedeque_imagem.jpeg" alt="Foto de Melquisedeque Santos da Silva" class="author-avatar-img">
@@ -555,19 +531,41 @@
           </div>
         </article>
 
-        <!-- Organizer: Luisa Canella -->
-        <article class="author-card organizer-card">
+      </div>
+
+      <!-- Equipe Editorial Abaixo dos Autores -->
+      <div class="editorial-team-col">
+        
+        <!-- Organizadora: Luisa Canella -->
+        <article class="team-card organizer-card">
           <div class="author-avatar-wrapper">
-            <div class="author-avatar-icon special">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div class="author-avatar-img-wrapper">
+              <img src="Luisa_imagem.jpeg" alt="Foto de Luisa Borges Canella" class="author-avatar-img">
             </div>
             <span class="author-role-badge badge-gold">Organizadora Editorial</span>
           </div>
           <div class="author-body">
             <h3 class="author-name">Luisa Borges Canella</h3>
-            <p class="author-origin">Curadoria & Revisão Editorial</p>
+            <p class="author-origin">Organização & Coordenação Editorial</p>
             <p class="author-bio">
               Responsável pela organização da coletânea, revisão dos textos e construção da estrutura da obra, acompanhando cada etapa até a versão final de Gente: vida, alma, morte.
+            </p>
+          </div>
+        </article>
+
+        <!-- Revisora: Juliana Alves dos Santos -->
+        <article class="team-card reviewer-card">
+          <div class="author-avatar-wrapper">
+            <div class="author-avatar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <span class="author-role-badge">Revisora Textual</span>
+          </div>
+          <div class="author-body">
+            <h3 class="author-name">Juliana Alves dos Santos</h3>
+            <p class="author-origin">Revisão Editorial & Preparação de Texto</p>
+            <p class="author-bio">
+              Responsável pela revisão textual e conformidade estilística da obra, assegurando o cuidado ortográfico, a clareza e o rigor linguístico na preparação de todos os poemas da publicação.
             </p>
           </div>
         </article>
@@ -621,48 +619,6 @@
           <div id="toastMessage" class="toast-message" role="status" aria-live="polite">Link copiado com sucesso!</div>
         </div>
 
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Ficha Técnica Section -->
-  <section class="section technical-section" id="ficha">
-    <div class="container">
-      
-      <div class="section-header text-center">
-        <span class="section-tag">Créditos Editoriais</span>
-        <h2 class="section-title">Ficha Catalográfica</h2>
-        <div class="section-ornament">
-          <span></span>
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.6-6.2 4.6 2.3-7.3-6.1-4.5h7.6z"/></svg>
-          <span></span>
-        </div>
-      </div>
-
-      <div class="technical-card">
-        <div class="catalog-card-header">
-          <span class="catalog-code">Dados Internacionais de Catalogação na Publicação (CIP)</span>
-          <span class="catalog-librarian">Zeneida Mello Britto — CRB1/1923</span>
-        </div>
-
-        <div class="catalog-card-body">
-          <p class="catalog-indent">
-            <strong>Canella, Luisa Borges (Org.)</strong>
-          </p>
-          <p class="catalog-text">
-            <strong>Gente: vida, alma, morte — poemas</strong> / organização de Luisa Borges Canella; poemas de Andreza dos Santos Costa, Kaylane Soares Pereira, Melquisedeque Santos da Silva; revisão de Luisa Borges Canella e Juliana Alves dos Santos; ilustrações de Andreza dos Santos Costa. — Eunápolis, BA: 2026.
-          </p>
-          <p class="catalog-meta">
-            94 p. ; il.<br>
-            <strong>ISBN:</strong> 978-65-02-36308-9 (e-book)<br>
-            1. Poesia brasileira. 2. Identidade. 3. Existência. I. Costa, Andreza dos Santos. II. Pereira, Kaylane Soares. III. Silva, Melquisedeque Santos da. IV. Título.
-          </p>
-          <div class="catalog-classification">
-            <span><strong>CDD:</strong> 869.91</span>
-            <span><strong>CDU:</strong> 82-(81)</span>
-          </div>
-        </div>
       </div>
 
     </div>
