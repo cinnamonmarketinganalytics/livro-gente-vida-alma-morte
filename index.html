@@ -99,7 +99,7 @@
         </p>
 
         <div class="hero-cta-group">
-          <a href="Gente-%20vida,%20alma,%20morte%20poemas_v.2.pdf" download="Gente - vida, alma, morte - Poemas.pdf" class="btn btn-primary btn-lg download-trigger">
+          <a href="#downloadModal" class="btn btn-primary btn-lg download-trigger">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <div class="btn-text-group">
               <span class="btn-title">Baixar Livro Gratuito</span>
@@ -452,7 +452,7 @@
             <h4>Quer ler os outros dezenas de poemas?</h4>
             <p>O livro possui 94 páginas de poesias comoventes prontas para você ler onde quiser.</p>
           </div>
-          <a href="Gente-%20vida,%20alma,%20morte%20poemas_v.2.pdf" download="Gente - vida, alma, morte - Poemas.pdf" class="btn btn-primary download-trigger">
+          <a href="#downloadModal" class="btn btn-primary download-trigger">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span>Baixar Livro Completo</span>
           </a>
@@ -588,7 +588,7 @@
         </p>
 
         <div class="download-actions">
-          <a href="Gente-%20vida,%20alma,%20morte%20poemas_v.2.pdf" download="Gente - vida, alma, morte - Poemas.pdf" class="btn btn-primary btn-xl download-trigger">
+          <a href="#downloadModal" class="btn btn-primary btn-xl download-trigger" data-mode="download">
             <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <div class="btn-text-group">
               <span class="btn-title-xl">Baixar Livro Completo (PDF)</span>
@@ -596,7 +596,7 @@
             </div>
           </a>
 
-          <a href="Gente-%20vida,%20alma,%20morte%20poemas_v.2.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-xl">
+          <a href="#downloadModal" class="btn btn-secondary btn-xl download-trigger" data-mode="view">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             <span>Visualizar no Navegador</span>
           </a>
@@ -656,6 +656,50 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Modal de Download / Captura de Lead -->
+  <div class="modal-backdrop" id="downloadModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="modalCloseBtn" type="button" aria-label="Fechar janela">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-badge-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <h3 class="modal-title" id="modalTitle">Baixe seu exemplar gratuito</h3>
+        <p class="modal-subtitle">
+          Informe seu nome completo e e-mail para liberar o download imediato de <strong>Gente: vida, alma, morte</strong> (PDF • 94 páginas).
+        </p>
+      </div>
+
+      <form id="downloadForm" class="modal-form" novalidate>
+        <div class="form-group">
+          <label for="userName" class="form-label">Nome Completo <span class="required-star">*</span></label>
+          <input type="text" id="userName" name="nome" class="form-input" placeholder="Ex: Maria dos Santos Silva" required autocomplete="name">
+          <span class="form-error" id="nameError">Por favor, informe seu nome completo.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="userEmail" class="form-label">E-mail <span class="required-star">*</span></label>
+          <input type="email" id="userEmail" name="email" class="form-input" placeholder="seuemail@exemplo.com" required autocomplete="email">
+          <span class="form-error" id="emailError">Por favor, informe um e-mail válido.</span>
+        </div>
+
+        <button type="submit" id="btnSubmitDownload" class="btn btn-primary btn-block modal-submit-btn">
+          <svg class="icon btn-icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span class="btn-spinner hidden" id="btnSpinner" aria-hidden="true"></span>
+          <span class="btn-text" id="btnText">Liberar e Baixar Livro</span>
+        </button>
+
+        <div class="modal-disclaimer">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <span>Seus dados estão protegidos. Não enviamos spam.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
 </body>
 </html>
